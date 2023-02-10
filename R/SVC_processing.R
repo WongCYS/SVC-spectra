@@ -2,7 +2,7 @@ library(tidyverse)
 
 #Location of all the raw .sig files 
 file_list <- list.files("C:/Users/cyswong/Documents/UCDavis/Beans/Reflectance/20211004", full.names = T, pattern = ".sig")
-file_list2 <- sub(".*/", "", file_list)    #Extract scan ID numbers
+file_list2 <- sub(".*/", "", file_list)    #Extract scan ID number
 
 #For loop to read and append all scans to single df
 dataset <- data.frame()
