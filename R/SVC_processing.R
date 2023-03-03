@@ -2,6 +2,7 @@
 
 #Read SVC .sig file-------------------------------------------------------------
 read_svc_long <- function(sig_file){
+  require(dplyr)
   ID <- sub(".*/", "", sig_file)    #Extract scan ID number
   df <- read.csv2(sig_file, sep = "", header=F, skip = 30)
   df[1:4] <- lapply(df[1:4], as.numeric)
