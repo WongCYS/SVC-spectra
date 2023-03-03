@@ -31,6 +31,6 @@ for (i in 1:length(file_list)){
 For calculating vegetation indices from the wide format data:
 ```
 #Example caluations of NDVI and PRI from wide format data
-df$NDVI <- calc_VI(df, a = 845, b = 645, buffer1 = 20, buffer2 = 20)
-df$PRI <- calc_VI(df, a = 531, b = 570, buffer1 = 5, buffer2 = 5)
+df$NDVI <- calc_VI(df, b1 = 845, b2 = 645, bufferb1 = 20, bufferb2 = 20)
+df$PRI <- calc_VI(df, b1 = 531, b2 = 570, bufferb1 = 5, bufferb2 = 5)
 ```
