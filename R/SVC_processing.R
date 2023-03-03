@@ -29,9 +29,9 @@ read_svc_rfl_wide <- function(sig_file){
 
 
 #calculates vegetation index using (a - b) / (a + b)----------------------------
-calc_VI <- function(df, a = 845, b = 645, buffer1 = 5, buffer2 = 5){
-  b1 <- which.min(abs(a - as.numeric(names(df), options(warn=-1))))   #Identify first band and start range
-  b2 <- which.min(abs(b - as.numeric(names(df), options(warn=-1))))   #Identify second band and end range
+calc_VI <- function(df, b1 = 845, b2 = 645, bufferb1 = 5, bufferb2 = 5){
+  b1 <- which.min(abs(b1 - as.numeric(names(df), options(warn=-1))))   #Identify first band and start range
+  b2 <- which.min(abs(b2 - as.numeric(names(df), options(warn=-1))))   #Identify second band and end range
   ((rowMeans(df[b1-buffer1:b1+buffer1]) - rowMeans(df[b2-buffer2:b2+buffer2])) /      #vegetation index equation
       (rowMeans(df[b1-buffer1:b1+buffer1]) + rowMeans(df[b2-buffer2:b2+buffer2])))
 }
